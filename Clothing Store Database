@@ -1,0 +1,53 @@
+/** Clothing_Store list:
+Crop Tops (10)
+Skinny Jeans (5)
+Necklaces(20)
+Scarves (13)
+Sneakers (45)
+Sandals (40)
+Hoodies (100)
+PJ Pants (15)
+Sports Bras (24)
+Leggings (8)
+Underwear (29)
+Socks (58)
+Tank Tops (36)
+Compression Socks (11)
+Blazers (14)
+Winter Coats (5)
+**/
+
+--create a clothing store database
+
+CREATE TABLE clothing_store (id INTEGER PRIMARY KEY, name TEXT, ordered INTEGER, sold INTEGER, price INTEGER, factory TEXT, buyer TEXT);
+
+INSERT INTO clothing_store VALUES (1, "Crop Tops", 10, 2, 35.99, "china", "sara");
+INSERT INTO clothing_store VALUES (2, "Skinny Jeans", 5, 2, 32.99, "india", "james");
+INSERT INTO clothing_store VALUES (3, "Necklaces", 20, 1, 17.95, "aspen", "nicole");
+INSERT INTO clothing_store VALUES (4, "Scarves", 13, 0, 10.00, "china", "sara");
+INSERT INTO clothing_store VALUES (5, "Sandals", 40, 40, 42.50, "nyc", "james");
+INSERT INTO clothing_store VALUES (6, "Hoodies", 100, 78, 76.32, "india", "nicole");
+INSERT INTO clothing_store VALUES (7, "PJ Pants", 15, 14, 15, "nyc", "sara");
+INSERT INTO clothing_store VALUES (8, "Sports Bras", 24, 22, 37.99, "apsen", "sara");
+INSERT INTO clothing_store VALUES (9, "Leggings", 8, 7, 34.00, "china", "nicole");
+INSERT INTO clothing_store VALUES (10, "Underwear", 29, 12, 5, "india", "nicole");
+INSERT INTO clothing_store VALUES (11, "Socks", 58, 58, 6.77, "aspen", "sara");
+INSERT INTO clothing_store VALUES (12, "Tank Tops", 36, 32, 66, "china", "james");
+INSERT INTO clothing_store VALUES (13, "Compression Socks", 11, 8, 92.00, "india", "nicole");
+INSERT INTO clothing_store VALUES (14, "Blazers", 14, 6, 19.89, "nyc", "kelly");
+INSERT INTO clothing_store VALUES (15, "Winter Coats", 5, 5, 67, "aspen", "james");
+
+--display all items in the database
+SELECT * FROM clothing_store;
+
+--what is the average price of items sourced from the factory in India?
+SELECT AVG(price) "price"
+FROM clothing_store
+WHERE factory='india'; 
+
+--what are the 5 highest priced retail items in the store?
+SELECT name, price, factory, buyer
+FROM clothing_store
+ORDER BY price DESC
+LIMIT 5;
+
